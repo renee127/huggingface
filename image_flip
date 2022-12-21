@@ -1,0 +1,16 @@
+import numpy as np
+import gradio as gr
+
+# Simple function to flip an image upside down
+def flip_image(image):
+    image_output = np.flipud(image)
+    return image_output
+    
+# Create a simple GUI
+gr.Interface(fn=flip_image,
+             inputs="image",
+             outputs="image",
+             title="Flip An Image Upside Down",
+             examples = ["ai_images.png"]
+             #enable_queue=True            
+            ).launch();
